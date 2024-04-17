@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:minggu_8_miniproj/pages/home_page.dart';
+import 'package:minggu_8_miniproj/pages/musiclist_page.dart';
+import 'package:minggu_8_miniproj/pages/play_page.dart';
+import 'package:minggu_8_miniproj/pages/playlist_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:minggu_8_miniproj/pages/splash_page.dart';
 import 'package:minggu_8_miniproj/pages/login_page.dart';
@@ -23,23 +27,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Aplikasi Lagu',
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.green,
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.green,
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: Colors.green,
-          ),
-        ),
-      ),
       initialRoute: '/',
       routes: <String, WidgetBuilder> {
-        '/': (_) => const SplashPage(),
+        '/': (_) => PlayPage(),
+        '/music': (_) => MusicListPage(),
+        '/playlist': (_) => PlaylistPage(),
+        '/play': (_) => PlayPage(),
+        '/splash': (_) => const SplashPage(),
         '/login': (_) => const LoginPage(),
         '/account': (_) => const AccountPage()
       },

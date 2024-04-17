@@ -18,7 +18,7 @@ class Note {
   final DateTime createdTime;
 
   const Note({
-    this.id,
+    this.id,  
     required this.isImportant,
     required this.number,
     required this.title,
